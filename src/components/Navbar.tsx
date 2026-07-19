@@ -1,7 +1,12 @@
+"use client";
+
 import styles from "./Navbar.module.css";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
+
   return (
     <div className={styles.navWrapper}>
       <nav className={styles.navBar}>
@@ -17,10 +22,16 @@ export default function Navbar() {
 
         {/* Navigation Links */}
         <div className={styles.navLinks}>
-          <Link href="#" className={styles.navLinkActive}>
+          <Link
+            href="/"
+            className={pathname === "/" ? styles.navLinkActive : styles.navLink}
+          >
             Home
           </Link>
-          <Link href="#" className={styles.navLink}>
+          <Link
+            href="/about"
+            className={pathname === "/about" ? styles.navLinkActive : styles.navLink}
+          >
             About
           </Link>
           <Link href="#" className={styles.navLink}>

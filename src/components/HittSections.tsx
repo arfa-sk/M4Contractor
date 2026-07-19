@@ -86,7 +86,7 @@ export default function HittSections() {
   return (
     <div className={styles.hittWrapper}>
       {/* SECTION 1: Markets & Practices */}
-      <section className={styles.marketsSection}>
+      <section className={`${styles.marketsSection} ${marketsInView ? styles.inView : ""}`} ref={marketsRef}>
         <div className={styles.giantBgText}>Expertise Our Expertise Our Expertise Our Expertise Our</div>
 
         <div className={styles.marketsContent}>
@@ -149,7 +149,7 @@ export default function HittSections() {
       </section>
 
       {/* SECTION 3: Here You Belong */}
-      <section className={styles.belongSection}>
+      <section className={`${styles.belongSection} ${belongInView ? styles.inView : ""}`} ref={belongRef}>
         <div className={styles.belongBgText}>Here You Belong Here You Belong Here You Belong Here You Belong</div>
         <img
           src="/team-cutout.png"
