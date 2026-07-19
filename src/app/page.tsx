@@ -40,38 +40,89 @@ export default function Home() {
       <Navbar />
 
       <main>
-        {/* Hero Section */}
+        {/* New Split Hero Section */}
         <motion.section className={styles.hero} initial="hidden" animate="visible" variants={staggerContainer}>
-          <div className={styles.heroBg}>
-            <div
-              className={styles.heroImg}
-              style={{
-                backgroundImage: "url('/hero.png')",
-              }}
-            ></div>
-            <div className={styles.heroOverlay}></div>
-          </div>
-          <motion.div className={styles.heroContent} variants={fadeInUp}>
-            <div className={styles.heroText}>
+          <div className={styles.heroContainer}>
+            {/* Left Content */}
+            <motion.div className={styles.heroLeft} variants={fadeInUp}>
+              <div className={styles.heroLabelRow}>
+                <div className={styles.orangeLine}></div>
+                <span className={`label-bold ${styles.heroLabelText}`}>BUILDING THE FUTURE</span>
+              </div>
+              
               <h1 className={`display-lg ${styles.heroTitle}`}>
-                Structural Precision.<br />
-                <span className={styles.heroTitleHighlight}>
-                  Modern Excellence.
-                </span>
+                <span className={styles.heroTitleDark}>STRUCTURAL</span><br/>
+                <span className={styles.heroTitleOrange}>PRECISION.</span>
               </h1>
+              
               <p className={`body-lg ${styles.heroDesc}`}>
-                Delivering high-end commercial and residential construction
-                projects with meticulous attention to detail and unwavering
-                commitment to quality.
+                Delivering high-end commercial and residential construction projects with meticulous attention to detail and unwavering commitment to quality.
               </p>
+              
               <div className={styles.heroBtns}>
-                <button className={`label-bold ${styles.heroBtnPrimary}`}>
-                  REQUEST QUOTE
-                </button>
-                <button className={`label-bold ${styles.heroBtnSecondary}`}>
-                  View Gallery
+                <button className={`label-bold ${styles.btnPrimary}`}>
+                  REQUEST QUOTE <span className="material-symbols-outlined">arrow_forward</span>
                 </button>
               </div>
+
+              {/* Trust Badges */}
+              <div className={styles.trustBadges}>
+                <div className={styles.badgeItem}>
+                  <span className={`material-symbols-outlined ${styles.badgeIcon}`}>shield_person</span>
+                  <div className={styles.badgeText}>SAUDI ARAMCO<br/>APPROVED</div>
+                </div>
+                <div className={styles.badgeItem}>
+                  <span className={`material-symbols-outlined ${styles.badgeIcon}`}>architecture</span>
+                  <div className={styles.badgeText}>500+<br/>PROJECTS</div>
+                </div>
+                <div className={styles.badgeItem}>
+                  <span className={`material-symbols-outlined ${styles.badgeIcon}`}>military_tech</span>
+                  <div className={styles.badgeText}>15+<br/>YEARS EXPERIENCE</div>
+                </div>
+                <div className={styles.badgeItem}>
+                  <span className={`material-symbols-outlined ${styles.badgeIcon}`}>verified</span>
+                  <div className={styles.badgeText}>ISO<br/>CERTIFIED</div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right Image Content */}
+            <motion.div className={styles.heroRight} variants={fadeInUp}>
+              <div className={styles.heroImageWrapper}>
+                <img src="/hero-new.png" alt="Construction Progress" className={styles.heroMainImage} />
+                
+                {/* Floating Stats Card */}
+                <motion.div className={styles.floatingStatsCard} variants={cardEntrance} initial="hidden" animate="visible">
+                  <div className={styles.statBox}>
+                    <span className={`material-symbols-outlined ${styles.statIcon}`}>domain</span>
+                    <div className={styles.statNumber}>12+</div>
+                    <div className={styles.statLabel}>YEARS<br/>IN BUSINESS</div>
+                  </div>
+                  <div className={styles.statBox}>
+                    <span className={`material-symbols-outlined ${styles.statIcon}`}>location_city</span>
+                    <div className={styles.statNumber}>500+</div>
+                    <div className={styles.statLabel}>COMPLETED<br/>PROJECTS</div>
+                  </div>
+                  <div className={styles.statBox}>
+                    <span className={`material-symbols-outlined ${styles.statIcon}`}>groups</span>
+                    <div className={styles.statNumber}>98%</div>
+                    <div className={styles.statLabel}>CLIENT<br/>SATISFACTION</div>
+                  </div>
+                  <div className={styles.statBox}>
+                    <span className={`material-symbols-outlined ${styles.statIcon}`}>engineering</span>
+                    <div className={styles.statNumber}>100+</div>
+                    <div className={styles.statLabel}>SKILLED<br/>PROFESSIONALS</div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+
+          <motion.div className={styles.scrollDownIndicator} variants={fadeInUp}>
+            <span className={styles.scrollText}>SCROLL DOWN</span>
+            <div className={styles.scrollLineContainer}>
+              <div className={styles.scrollLine}></div>
+              <div className={styles.scrollCircle}></div>
             </div>
           </motion.div>
         </motion.section>
