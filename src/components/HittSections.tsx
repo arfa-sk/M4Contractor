@@ -15,7 +15,11 @@ const Slide = ({ title, category, img }: { title: string; category: string; img:
 export default function HittSections() {
   const experienceRef = useRef<HTMLElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
+  const marketsRef = useRef<HTMLElement>(null);
+  const belongRef = useRef<HTMLElement>(null);
   const [inView, setInView] = useState(false);
+  const [marketsInView, setMarketsInView] = useState(false);
+  const [belongInView, setBelongInView] = useState(false);
 
   const scrollLeft = () => {
     if (carouselRef.current) {
@@ -38,6 +42,26 @@ export default function HittSections() {
       }
     }
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === marketsRef.current) {
+            setMarketsInView(entry.isIntersecting);
+          } else if (entry.target === belongRef.current) {
+            setBelongInView(entry.isIntersecting);
+          }
+        });
+      },
+      { threshold: 0.05 }
+    );
+
+    if (marketsRef.current) observer.observe(marketsRef.current);
+    if (belongRef.current) observer.observe(belongRef.current);
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     // This effect creates a smooth body background transition
@@ -135,15 +159,51 @@ export default function HittSections() {
             className={styles.experienceImg}
           />
           <div className={styles.experienceText}>
-            <h3>Why M4</h3>
-            <ul>
-              <li><strong>Proven execution</strong> — a decade-plus track record delivering complex power, corrosion protection, and infrastructure projects across the Kingdom</li>
-              <li><strong>Uncompromising safety standards</strong> — every project executed under strict HSE protocols, with zero tolerance for shortcuts</li>
-              <li><strong>Technical depth</strong> — an experienced team of certified engineers and technicians, not subcontracted guesswork</li>
-              <li><strong>Modern methods, proven results</strong> — equipment and processes aligned with international standards</li>
-              <li><strong>Built for Vision 2030</strong> — positioned as a long-term infrastructure partner for the Kingdom's energy and industrial future</li>
-              <li><strong>Accountability by design</strong> — clear project ownership from design through commissioning</li>
-            </ul>
+            <h3><span className={styles.textAccent}>Why</span> M4 Contractor?</h3>
+            <div className={styles.featureList}>
+              <div className={styles.featureItem}>
+                <div className={styles.featureIcon}><span className="material-symbols-outlined">verified</span></div>
+                <div className={styles.featureContent}>
+                  <h4>Proven Execution</h4>
+                  <p>A decade-plus track record delivering complex power, corrosion protection, and infrastructure projects across the Kingdom.</p>
+                </div>
+              </div>
+              <div className={styles.featureItem}>
+                <div className={styles.featureIcon}><span className="material-symbols-outlined">health_and_safety</span></div>
+                <div className={styles.featureContent}>
+                  <h4>Uncompromising Safety</h4>
+                  <p>Every project executed under strict HSE protocols, with zero tolerance for shortcuts.</p>
+                </div>
+              </div>
+              <div className={styles.featureItem}>
+                <div className={styles.featureIcon}><span className="material-symbols-outlined">engineering</span></div>
+                <div className={styles.featureContent}>
+                  <h4>Technical Depth</h4>
+                  <p>An experienced team of certified engineers and technicians, not subcontracted guesswork.</p>
+                </div>
+              </div>
+              <div className={styles.featureItem}>
+                <div className={styles.featureIcon}><span className="material-symbols-outlined">insights</span></div>
+                <div className={styles.featureContent}>
+                  <h4>Modern Methods</h4>
+                  <p>Equipment and processes aligned with the highest international standards.</p>
+                </div>
+              </div>
+              <div className={styles.featureItem}>
+                <div className={styles.featureIcon}><span className="material-symbols-outlined">rocket_launch</span></div>
+                <div className={styles.featureContent}>
+                  <h4>Built for Vision 2030</h4>
+                  <p>Positioned as a long-term infrastructure partner for the Kingdom's energy and industrial future.</p>
+                </div>
+              </div>
+              <div className={styles.featureItem}>
+                <div className={styles.featureIcon}><span className="material-symbols-outlined">gavel</span></div>
+                <div className={styles.featureContent}>
+                  <h4>Accountability</h4>
+                  <p>Clear project ownership from initial design through final commissioning.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

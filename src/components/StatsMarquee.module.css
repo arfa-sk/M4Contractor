@@ -10,28 +10,8 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-}
-
-/* Cinematic Gradient Fades on both sides */
-.marqueeContainer::before,
-.marqueeContainer::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 180px;
-  z-index: 5;
-  pointer-events: none;
-}
-
-.marqueeContainer::before {
-  left: 0;
-  background: linear-gradient(to right, #121416 0%, transparent 100%);
-}
-
-.marqueeContainer::after {
-  right: 0;
-  background: linear-gradient(to left, #121416 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 .marqueeTrack {
@@ -71,8 +51,9 @@
   font-weight: 800;
   color: #ffffff;
   margin-bottom: 8px;
-  background: linear-gradient(135deg, #ffffff 40%, #f14d2a 120%);
+  background: linear-gradient(135deg, var(--body-text, #1a1c1c) 15%, var(--vibrant-orange) 85%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

@@ -1,8 +1,38 @@
+"use client";
+
+import { motion } from "motion/react";
 import styles from "./page.module.css";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HittSections from "@/components/HittSections";
+
+const staggerContainer = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 }
+  }
+};
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as const }
+  }
+};
+
+const cardEntrance = {
+  hidden: { opacity: 0, y: 30, scale: 0.98 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as const }
+  }
+};
 
 export default function Home() {
   return (
@@ -11,7 +41,7 @@ export default function Home() {
 
       <main>
         {/* Hero Section */}
-        <section className={styles.hero}>
+        <motion.section className={styles.hero} initial="hidden" animate="visible" variants={staggerContainer}>
           <div className={styles.heroBg}>
             <div
               className={styles.heroImg}
@@ -21,7 +51,7 @@ export default function Home() {
             ></div>
             <div className={styles.heroOverlay}></div>
           </div>
-          <div className={styles.heroContent}>
+          <motion.div className={styles.heroContent} variants={fadeInUp}>
             <div className={styles.heroText}>
               <h1 className={`display-lg ${styles.heroTitle}`}>
                 Structural Precision.<br />
@@ -43,14 +73,14 @@ export default function Home() {
                 </button>
               </div>
             </div>
-          </div>
-        </section>
+          </motion.div>
+        </motion.section>
 
         <HittSections />
 
         {/* Our Expertise Section */}
-        <section className={styles.section}>
-          <div className={styles.sectionHeader}>
+        <motion.section className={styles.section} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}>
+          <motion.div className={styles.sectionHeader} variants={fadeInUp}>
             <div>
               <span className={`label-bold ${styles.sectionLabel}`}>
                 What We Do
@@ -64,10 +94,10 @@ export default function Home() {
               comprehensive contracting services that redefine architectural
               boundaries.
             </p>
-          </div>
+          </motion.div>
           <div className={styles.grid3}>
             {/* Service 1 */}
-            <div className={styles.expertiseCard}>
+            <motion.div className={styles.expertiseCard} variants={cardEntrance} whileHover={{ y: -5 }}>
               <img src="/design and the structure of the company.png" alt="LV/MV Overhead Power Line Construction" />
               <div className={styles.expertiseContent}>
                 <h3 className={styles.expertiseTitle}>LV/MV Overhead Power Line Construction</h3>
@@ -86,10 +116,10 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-            </div>
+            </motion.div>
 
             {/* Service 2 */}
-            <div className={styles.expertiseCard}>
+            <motion.div className={styles.expertiseCard} variants={cardEntrance} whileHover={{ y: -5 }}>
               <img src="/quality system.png" alt="Underground Power Line Construction" />
               <div className={styles.expertiseContent}>
                 <h3 className={styles.expertiseTitle}>Underground Power Line Construction</h3>
@@ -108,10 +138,10 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-            </div>
+            </motion.div>
 
             {/* Service 3 */}
-            <div className={styles.expertiseCard}>
+            <motion.div className={styles.expertiseCard} variants={cardEntrance} whileHover={{ y: -5 }}>
               <img src="/maintanice .png" alt="Cathodic Protection Systems" />
               <div className={styles.expertiseContent}>
                 <h3 className={styles.expertiseTitle}>Cathodic Protection Systems</h3>
@@ -130,21 +160,21 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-            </div>
+            </motion.div>
           </div>
           
-          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '64px' }}>
+          <motion.div style={{ display: 'flex', justifyContent: 'center', marginTop: '64px' }} variants={fadeInUp}>
             <a href="/services" className={styles.heroBtnPrimary}>
               View All Services
             </a>
-          </div>
-        </section>
+          </motion.div>
+        </motion.section>
 
         {/* Why Choose Us */}
-        <section className={styles.splitSection}>
+        <motion.section className={styles.splitSection} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}>
           <div className={styles.section}>
             <div className={styles.splitLayout}>
-              <div className={styles.splitHalf}>
+              <motion.div className={styles.splitHalf} variants={fadeInUp}>
                 <div className={styles.imgBox}>
                   <div className={styles.imgBoxInner}>
                     <div
@@ -157,16 +187,16 @@ export default function Home() {
                   </div>
                   <div className={styles.imgBoxDeco}></div>
                 </div>
-              </div>
-              <div className={styles.splitHalf}>
-                <span className={`label-bold ${styles.sectionLabel}`}>
+              </motion.div>
+              <motion.div className={styles.splitHalf} variants={staggerContainer}>
+                <motion.span className={`label-bold ${styles.sectionLabel}`} variants={fadeInUp}>
                   Core Values
-                </span>
-                <h2 className={`headline-xl ${styles.sectionTitle}`}>
+                </motion.span>
+                <motion.h2 className={`headline-xl ${styles.sectionTitle}`} variants={fadeInUp}>
                   Why Choose M4 Contractor?
-                </h2>
+                </motion.h2>
                 <div className={styles.valueList}>
-                  <div className={styles.valueItem}>
+                  <motion.div className={styles.valueItem} variants={fadeInUp}>
                     <div className={styles.valueIcon}>
                       <span className="material-symbols-outlined">precision_manufacturing</span>
                     </div>
@@ -180,8 +210,8 @@ export default function Home() {
                         integrity is never compromised for aesthetic.
                       </p>
                     </div>
-                  </div>
-                  <div className={styles.valueItem}>
+                  </motion.div>
+                  <motion.div className={styles.valueItem} variants={fadeInUp}>
                     <div className={styles.valueIcon}>
                       <span className="material-symbols-outlined">verified</span>
                     </div>
@@ -195,8 +225,8 @@ export default function Home() {
                         across the region.
                       </p>
                     </div>
-                  </div>
-                  <div className={styles.valueItem}>
+                  </motion.div>
+                  <motion.div className={styles.valueItem} variants={fadeInUp}>
                     <div className={styles.valueIcon}>
                       <span className="material-symbols-outlined">handshake</span>
                     </div>
@@ -210,24 +240,24 @@ export default function Home() {
                         throughout the build lifecycle.
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Recent Projects */}
-        <section className={styles.section}>
-          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+        <motion.section className={styles.section} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}>
+          <motion.div style={{ textAlign: 'center', marginBottom: '64px' }} variants={fadeInUp}>
             <span className={`label-bold ${styles.sectionLabel}`}>Portfolio</span>
             <h2 className={`headline-xl ${styles.sectionTitle}`}>
               Recent Projects
             </h2>
-          </div>
+          </motion.div>
           <div className={styles.grid3}>
             {/* Project 1 */}
-            <div className={styles.projectCard}>
+            <motion.div className={styles.projectCard} variants={cardEntrance} whileHover={{ y: -5 }}>
               <div className={styles.projectImgWrap}>
                 <div
                   className={styles.projectImg}
@@ -254,10 +284,10 @@ export default function Home() {
                   <span className={styles.statusValue}>COMPLETED</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Project 2 */}
-            <div className={styles.projectCard}>
+            <motion.div className={styles.projectCard} variants={cardEntrance} whileHover={{ y: -5 }}>
               <div className={styles.projectImgWrap}>
                 <div
                   className={styles.projectImg}
@@ -284,10 +314,10 @@ export default function Home() {
                   <span className={styles.statusValue}>85% COMPLETE</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Project 3 */}
-            <div className={styles.projectCard}>
+            <motion.div className={styles.projectCard} variants={cardEntrance} whileHover={{ y: -5 }}>
               <div className={styles.projectImgWrap}>
                 <div
                   className={styles.projectImg}
@@ -314,18 +344,18 @@ export default function Home() {
                   <span className={styles.statusValue}>COMPLETED</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
-          <div className={styles.centerBtn}>
+          <motion.div className={styles.centerBtn} variants={fadeInUp}>
             <button className="btn-secondary label-bold">
               Browse All Projects
             </button>
-          </div>
-        </section>
+          </motion.div>
+        </motion.section>
 
         {/* CTA Section */}
-        <section className={styles.ctaSection}>
-          <div className={styles.ctaContent}>
+        <motion.section className={styles.ctaSection} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}>
+          <motion.div className={styles.ctaContent} variants={fadeInUp}>
             <h2 className={`headline-xl ${styles.ctaTitle}`}>
               Powering Your Next Project?
             </h2>
@@ -337,8 +367,8 @@ export default function Home() {
             <button className={`label-bold ${styles.heroBtnPrimary}`}>
               REQUEST QUOTE
             </button>
-          </div>
-          <div className={styles.ctaMapContainer}>
+          </motion.div>
+          <motion.div className={styles.ctaMapContainer} variants={fadeInUp}>
             <iframe 
               src="https://www.google.com/maps?q=King+Abdulaziz+Rd,+Almadinah,+Abqaiq,+33261,+Saudi+Arabia&output=embed" 
               className={styles.ctaMap} 
@@ -346,8 +376,8 @@ export default function Home() {
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
-          </div>
-        </section>
+          </motion.div>
+        </motion.section>
       </main>
 
       <Footer />

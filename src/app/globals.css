@@ -16,10 +16,10 @@
   --inverse-on-surface: #f0f1f1;
   --outline: #8f7069;
   --outline-variant: #e4beb6;
-  --surface-tint: #b72300;
-  --primary: #b32200;
+  --surface-tint: var(--vibrant-orange);
+  --primary: var(--vibrant-orange);
   --on-primary: #ffffff;
-  --primary-container: #d73b19;
+  --primary-container: rgba(255, 107, 0, 0.1);
   --on-primary-container: #fffbff;
   --inverse-primary: #ffb4a4;
   --secondary: #5f5e5e;

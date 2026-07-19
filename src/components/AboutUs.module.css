@@ -5,7 +5,7 @@
 /* ── Hero ── */
 .hero {
   position: relative;
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,7 +35,12 @@
 .heroContent {
   position: relative;
   z-index: 2;
-  max-width: 720px;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .heroLabel {
@@ -58,7 +63,7 @@
 .heroDesc {
   color: rgba(255, 255, 255, 0.85);
   margin-bottom: 40px;
-  max-width: 560px;
+  max-width: 800px;
 }
 
 .heroBtns {
@@ -136,8 +141,9 @@
   font-family: var(--font-montserrat);
   font-size: 32px;
   font-weight: 700;
-  color: var(--on-surface);
+  color: var(--body-text);
   line-height: 1.2;
+  transition: color 0.6s ease;
 }
 
 .statLabel {
@@ -205,13 +211,16 @@
 }
 
 .standardTitle {
-  color: var(--on-surface);
+  color: var(--body-text);
   margin-bottom: 20px;
+  transition: color 0.6s ease;
 }
 
 .standardDesc {
-  color: var(--secondary);
+  color: var(--body-text);
+  opacity: 0.8;
   margin-bottom: 40px;
+  transition: color 0.6s ease;
 }
 
 .standardCards {
@@ -243,8 +252,10 @@
 }
 
 .standardCardTitle {
+  color: var(--body-text);
   margin-bottom: 4px;
   font-size: 20px;
+  transition: color 0.6s ease;
 }
 
 .quote {
@@ -307,6 +318,233 @@
   color: rgba(255, 255, 255, 0.55);
   margin-top: 2px;
 }
+/* ── Aramco Certification ── */
+.aramcoSection {
+  padding: 120px var(--spacing-margin-desktop);
+  background-color: transparent;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.aramcoContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  text-align: left;
+}
+
+.aramcoContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.aramcoLogo {
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.aramcoLogo img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+}
+
+.aramcoTitle {
+  color: var(--body-text);
+  margin-bottom: 24px;
+  font-size: 42px;
+  position: relative;
+  z-index: 2;
+  transition: color 0.8s ease;
+}
+
+.aramcoDesc {
+  color: var(--body-text);
+  opacity: 0.8;
+  font-family: var(--font-inter);
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 0 40px;
+  font-size: 18px;
+  position: relative;
+  z-index: 2;
+  transition: color 0.8s ease;
+}
+
+.aramcoDetails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+.aramcoItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 24px 32px;
+  background: rgba(128, 128, 128, 0.05);
+  border: 1px solid rgba(128, 128, 128, 0.1);
+  border-radius: 12px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.aramcoItem:hover {
+  transform: translateY(-5px);
+  border-color: var(--vibrant-orange);
+}
+
+.aramcoLabel {
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  color: var(--vibrant-orange);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.aramcoValue {
+  font-family: var(--font-inter);
+  font-weight: 800;
+  color: var(--body-text);
+  font-size: 28px;
+  letter-spacing: -0.02em;
+  transition: color 0.8s ease;
+}
+
+.aramcoImageWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.aramcoImageGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: var(--vibrant-orange);
+  filter: blur(100px);
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.aramcoImage {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  transform-style: preserve-3d;
+}
+
+/* ── Vision & Mission ── */
+.visionMissionSection {
+  padding: 100px var(--spacing-margin-desktop);
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.visionMissionGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 160px; /* Big gap to allow transition between sections */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.vmCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 0;
+  background: rgba(128, 128, 128, 0.05); /* Works on light and dark */
+  border: 1px solid rgba(128, 128, 128, 0.1);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.1);
+}
+
+.vmCard.reverse {
+  direction: rtl;
+}
+
+.vmCard.reverse > * {
+  direction: ltr;
+}
+
+.vmImageContainer {
+  position: relative;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.vmImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.vmCard:hover .vmImage {
+  transform: scale(1.05);
+}
+
+.vmContentBox {
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.vmBadge {
+  display: inline-block;
+  background-color: var(--vibrant-orange);
+  color: #ffffff;
+  font-family: var(--font-montserrat);
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  margin-bottom: 24px;
+  align-self: flex-start;
+  border-radius: 2px;
+  box-shadow: 0 4px 15px rgba(241, 77, 42, 0.3);
+}
+
+.vmText {
+  color: var(--body-text);
+  opacity: 0.85;
+  font-family: var(--font-inter);
+  line-height: 1.8;
+  font-size: 16px;
+  transition: color 0.8s ease;
+}
 
 /* ── Timeline ── */
 .timelineSection {
@@ -335,11 +573,35 @@
   display: flex;
   flex-direction: column;
   gap: 0;
+  position: relative;
+}
+
+.timelineTrack {
+  position: absolute;
+  top: 10px;
+  bottom: 0;
+  left: 11px; /* Center of the 24px marker */
+  width: 2px;
+  background: var(--outline-variant);
+  z-index: 1;
+}
+
+.timelineFill {
+  position: absolute;
+  top: 10px;
+  bottom: 0;
+  left: 11px;
+  width: 2px;
+  background: var(--vibrant-orange);
+  z-index: 2;
+  transform-origin: top;
 }
 
 .timelineItem {
   display: flex;
   gap: 32px;
+  position: relative;
+  z-index: 3;
 }
 
 .timelineMarker {
@@ -355,17 +617,11 @@
   height: 16px;
   border-radius: var(--radius-full);
   background: var(--vibrant-orange);
-  border: 3px solid #ffffff;
+  border: 3px solid var(--surface-container-low);
   box-shadow: 0 0 0 2px var(--vibrant-orange);
   flex-shrink: 0;
   margin-top: 6px;
-}
-
-.timelineLine {
-  width: 2px;
-  flex: 1;
-  background: var(--outline-variant);
-  min-height: 60px;
+  z-index: 4;
 }
 
 .timelineContent {
@@ -452,10 +708,38 @@
     border-bottom: none;
   }
 
+  .aramcoSection,
   .standardSection,
   .timelineSection,
+  .visionMissionSection,
   .ctaSection {
     padding-left: var(--spacing-margin-mobile);
     padding-right: var(--spacing-margin-mobile);
+  }
+
+  .aramcoItem {
+    padding: 24px;
+    width: 100%;
+  }
+
+  .aramcoDetails {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .vmCard {
+    grid-template-columns: 1fr;
+  }
+
+  .vmCard.reverse {
+    direction: ltr;
+  }
+
+  .vmImageContainer {
+    min-height: 250px;
+  }
+
+  .vmContentBox {
+    padding: 40px 24px;
   }
 }
