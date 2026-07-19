@@ -22,12 +22,7 @@ export default function Navbar() {
 
         {/* Navigation Links */}
         <div className={styles.navLinks}>
-          <Link
-            href="/"
-            className={pathname === "/" ? styles.navLinkActive : styles.navLink}
-          >
-            Home
-          </Link>
+
           <Link
             href="/about"
             className={pathname === "/about" ? styles.navLinkActive : styles.navLink}
