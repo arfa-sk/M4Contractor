@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   background-color: #ffffff;
-  padding-top: 100px; /* Space for navbar */
+  padding-top: 140px; /* Space for navbar */
   padding-bottom: 60px; /* Ensure space for floating card */
 }
 
@@ -191,7 +191,7 @@
 .heroImageWrapper {
   position: relative;
   width: 100%;
-  max-width: 700px;
+  max-width: 850px;
 }
 
 .heroMainImage {
@@ -204,9 +204,9 @@
 /* Floating Stats Card */
 .floatingStatsCard {
   position: absolute;
-  bottom: -20px;
-  left: -40px;
-  right: 40px;
+  bottom: 20px;
+  left: -60px;
+  right: 60px;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.08);
