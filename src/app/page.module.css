@@ -249,6 +249,83 @@
   margin-bottom: 16px;
   text-transform: uppercase;
 }
+
+/* Premium Expertise Cards */
+.expertiseCard {
+  position: relative;
+  height: 550px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+}
+.expertiseCard::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 100%);
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+.expertiseCard:hover::after {
+  background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(200,50,0,0.5) 100%);
+}
+
+.expertiseCard img {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+  z-index: 0;
+}
+.expertiseCard:hover img {
+  transform: scale(1.08);
+}
+
+.expertiseContent {
+  position: relative;
+  z-index: 2;
+  transform: translateY(110px);
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.expertiseCard:hover .expertiseContent {
+  transform: translateY(0);
+}
+
+.expertiseTitle {
+  font-family: var(--font-montserrat);
+  font-size: 32px;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+.expertiseList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  transition-delay: 0.1s;
+}
+.expertiseCard:hover .expertiseList {
+  opacity: 1;
+}
+.expertiseListItem {
+  color: #e2e8f0;
+  font-size: 16px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.expertiseListItem span {
+  color: var(--primary);
+  font-size: 18px;
+}
+
 .cardTitleInverse {
   color: var(--surface);
 }
@@ -423,20 +500,42 @@
 }
 
 .ctaSection {
-  background-color: var(--inverse-surface);
-  padding: 96px 20px;
-  text-align: center;
+  background-color: var(--surface);
+  display: flex;
+  align-items: stretch;
 }
+@media (max-width: 900px) {
+  .ctaSection {
+    flex-direction: column;
+  }
+}
+.ctaContent {
+  flex: 1;
+  padding: 96px 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.ctaMapContainer {
+  flex: 1;
+  min-height: 400px;
+}
+.ctaMap {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(80%) invert(90%) contrast(1.2);
+}
+
 .ctaTitle {
-  color: var(--surface);
+  color: var(--on-surface);
   margin-bottom: 24px;
 }
 .ctaDesc {
-  color: var(--surface-variant);
+  color: var(--secondary);
   margin-bottom: 48px;
   max-width: 42rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .footer {

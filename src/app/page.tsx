@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import HittSections from "@/components/HittSections";
 
 export default function Home() {
@@ -55,7 +56,7 @@ export default function Home() {
                 What We Do
               </span>
               <h2 className={`headline-xl ${styles.sectionTitle}`}>
-                Our Expertise
+                Services
               </h2>
             </div>
             <p className={`body-md ${styles.sectionDesc}`}>
@@ -66,74 +67,76 @@ export default function Home() {
           </div>
           <div className={styles.grid3}>
             {/* Service 1 */}
-            <div className={`${styles.card} ${styles.cardLow}`}>
-              <div className={`${styles.cardIcon} ${styles.cardIconPrimary}`}>
-                <span className="material-symbols-outlined" style={{ fontSize: '36px' }}>architecture</span>
+            <div className={styles.expertiseCard}>
+              <img src="/design and the structure of the company.png" alt="LV/MV Overhead Power Line Construction" />
+              <div className={styles.expertiseContent}>
+                <h3 className={styles.expertiseTitle}>LV/MV Overhead Power Line Construction</h3>
+                <ul className={styles.expertiseList}>
+                  <li className={styles.expertiseListItem}>
+                    <span className="material-symbols-outlined">done_all</span>
+                    Transmission & Distribution
+                  </li>
+                  <li className={styles.expertiseListItem}>
+                    <span className="material-symbols-outlined">done_all</span>
+                    Pole Installation & Stringing
+                  </li>
+                  <li className={styles.expertiseListItem}>
+                    <span className="material-symbols-outlined">done_all</span>
+                    Substation Integration
+                  </li>
+                </ul>
               </div>
-              <h3 className={`headline-lg ${styles.cardTitle}`}>
-                Pre-Construction
-              </h3>
-              <ul className={styles.cardList}>
-                <li className={styles.cardListItem}>
-                  <span className={`material-symbols-outlined ${styles.cardIconPrimary}`}>check_circle</span>
-                  <span className="label-bold">Feasibility Studies</span>
-                </li>
-                <li className={styles.cardListItem}>
-                  <span className={`material-symbols-outlined ${styles.cardIconPrimary}`}>check_circle</span>
-                  <span className="label-bold">Cost Estimation</span>
-                </li>
-                <li className={styles.cardListItem}>
-                  <span className={`material-symbols-outlined ${styles.cardIconPrimary}`}>check_circle</span>
-                  <span className="label-bold">Design Integration</span>
-                </li>
-              </ul>
             </div>
+
             {/* Service 2 */}
-            <div className={`${styles.card} ${styles.cardInverse}`}>
-              <div className={`${styles.cardIcon} ${styles.cardIconInverse}`}>
-                <span className="material-symbols-outlined" style={{ fontSize: '36px' }}>construction</span>
+            <div className={styles.expertiseCard}>
+              <img src="/quality system.png" alt="Underground Power Line Construction" />
+              <div className={styles.expertiseContent}>
+                <h3 className={styles.expertiseTitle}>Underground Power Line Construction</h3>
+                <ul className={styles.expertiseList}>
+                  <li className={styles.expertiseListItem}>
+                    <span className="material-symbols-outlined">done_all</span>
+                    Trenching & Duct Banks
+                  </li>
+                  <li className={styles.expertiseListItem}>
+                    <span className="material-symbols-outlined">done_all</span>
+                    Cable Pulling & Splicing
+                  </li>
+                  <li className={styles.expertiseListItem}>
+                    <span className="material-symbols-outlined">done_all</span>
+                    Testing & Commissioning
+                  </li>
+                </ul>
               </div>
-              <h3 className={`headline-lg ${styles.cardTitle} ${styles.cardTitleInverse}`}>
-                General Contracting
-              </h3>
-              <ul className={styles.cardList}>
-                <li className={styles.cardListItemInverse}>
-                  <span className={`material-symbols-outlined ${styles.cardIconInverse}`}>check_circle</span>
-                  <span className="label-bold">Project Management</span>
-                </li>
-                <li className={styles.cardListItemInverse}>
-                  <span className={`material-symbols-outlined ${styles.cardIconInverse}`}>check_circle</span>
-                  <span className="label-bold">Safety Compliance</span>
-                </li>
-                <li className={styles.cardListItemInverse}>
-                  <span className={`material-symbols-outlined ${styles.cardIconInverse}`}>check_circle</span>
-                  <span className="label-bold">Vendor Management</span>
-                </li>
-              </ul>
             </div>
+
             {/* Service 3 */}
-            <div className={`${styles.card} ${styles.cardLow}`}>
-              <div className={`${styles.cardIcon} ${styles.cardIconPrimary}`}>
-                <span className="material-symbols-outlined" style={{ fontSize: '36px' }}>corporate_fare</span>
+            <div className={styles.expertiseCard}>
+              <img src="/maintanice .png" alt="Cathodic Protection Systems" />
+              <div className={styles.expertiseContent}>
+                <h3 className={styles.expertiseTitle}>Cathodic Protection Systems</h3>
+                <ul className={styles.expertiseList}>
+                  <li className={styles.expertiseListItem}>
+                    <span className="material-symbols-outlined">done_all</span>
+                    Corrosion Prevention
+                  </li>
+                  <li className={styles.expertiseListItem}>
+                    <span className="material-symbols-outlined">done_all</span>
+                    Anode Bed Installation
+                  </li>
+                  <li className={styles.expertiseListItem}>
+                    <span className="material-symbols-outlined">done_all</span>
+                    System Monitoring
+                  </li>
+                </ul>
               </div>
-              <h3 className={`headline-lg ${styles.cardTitle}`}>
-                Post-Construction
-              </h3>
-              <ul className={styles.cardList}>
-                <li className={styles.cardListItem}>
-                  <span className={`material-symbols-outlined ${styles.cardIconPrimary}`}>check_circle</span>
-                  <span className="label-bold">Quality Assurance</span>
-                </li>
-                <li className={styles.cardListItem}>
-                  <span className={`material-symbols-outlined ${styles.cardIconPrimary}`}>check_circle</span>
-                  <span className="label-bold">Facility Handover</span>
-                </li>
-                <li className={styles.cardListItem}>
-                  <span className={`material-symbols-outlined ${styles.cardIconPrimary}`}>check_circle</span>
-                  <span className="label-bold">Ongoing Support</span>
-                </li>
-              </ul>
             </div>
+          </div>
+          
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '64px' }}>
+            <a href="/services" className={styles.heroBtnPrimary}>
+              View All Services
+            </a>
           </div>
         </section>
 
@@ -322,73 +325,32 @@ export default function Home() {
 
         {/* CTA Section */}
         <section className={styles.ctaSection}>
-          <h2 className={`headline-xl ${styles.ctaTitle}`}>
-            Ready to Build Your Vision?
-          </h2>
-          <p className={`body-lg ${styles.ctaDesc}`}>
-            Consult with our expert project managers and architects to start
-            your journey towards excellence.
-          </p>
-          <button className={`label-bold ${styles.heroBtnPrimary}`}>
-            REQUEST QUOTE
-          </button>
+          <div className={styles.ctaContent}>
+            <h2 className={`headline-xl ${styles.ctaTitle}`}>
+              Powering Your Next Project?
+            </h2>
+            <p className={`body-lg ${styles.ctaDesc}`}>
+              Connect with our specialized engineering team to discuss your infrastructure, power distribution, and protection needs.<br/><br/>
+              <strong>Location:</strong> King Abdulaziz Rd, Almadinah, Abqaiq, 33261, Kingdom of Saudi Arabia<br/>
+              <strong>Tel:</strong> 013 565 1449
+            </p>
+            <button className={`label-bold ${styles.heroBtnPrimary}`}>
+              REQUEST QUOTE
+            </button>
+          </div>
+          <div className={styles.ctaMapContainer}>
+            <iframe 
+              src="https://www.google.com/maps?q=King+Abdulaziz+Rd,+Almadinah,+Abqaiq,+33261,+Saudi+Arabia&output=embed" 
+              className={styles.ctaMap} 
+              allowFullScreen={false} 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className={styles.footer}>
-        <div className={styles.footerGrid}>
-          <div>
-            <span className={`display-lg ${styles.footerBrand}`}>
-              M4 Contractor
-            </span>
-            <p className={`body-md ${styles.footerDesc}`}>
-              Leading the industry in structural precision and architectural
-              innovation.
-            </p>
-            <div className={styles.footerSocial}>
-              <a className={styles.socialIcon} href="#">
-                <span className="material-symbols-outlined">public</span>
-              </a>
-              <a className={styles.socialIcon} href="#">
-                <span className="material-symbols-outlined">mail</span>
-              </a>
-            </div>
-          </div>
-          <div>
-            <h5 className={`label-bold ${styles.footerColTitle}`}>Quick Links</h5>
-            <ul className={styles.footerLinks}>
-              <li><a className={`label-bold ${styles.footerLink}`} href="#">Home</a></li>
-              <li><a className={`label-bold ${styles.footerLink}`} href="#">Our Expertise</a></li>
-              <li><a className={`label-bold ${styles.footerLink}`} href="#">Project Gallery</a></li>
-              <li><a className={`label-bold ${styles.footerLink}`} href="#">Request Quote</a></li>
-            </ul>
-          </div>
-          <div>
-            <h5 className={`label-bold ${styles.footerColTitle}`}>Legal</h5>
-            <ul className={styles.footerLinks}>
-              <li><a className={`label-bold ${styles.footerLink}`} href="#">Privacy Policy</a></li>
-              <li><a className={`label-bold ${styles.footerLink}`} href="#">Terms of Service</a></li>
-              <li><a className={`label-bold ${styles.footerLink}`} href="#">Careers</a></li>
-            </ul>
-          </div>
-          <div>
-            <h5 className={`label-bold ${styles.footerColTitle}`}>Newsletter</h5>
-            <p className={`body-md ${styles.footerDesc}`} style={{ marginBottom: '16px' }}>
-              Stay updated with our latest architectural insights.
-            </p>
-            <div className={styles.footerInputGroup}>
-              <input className={styles.footerInput} placeholder="Email Address" type="email" />
-              <button className={`label-bold ${styles.subscribeBtn}`}>SUBSCRIBE</button>
-            </div>
-          </div>
-        </div>
-        <div className={styles.footerBottom}>
-          <p className={`label-bold ${styles.copyright}`}>
-            © 2024 M4 Contractor. All Rights Reserved. Built with Precision.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
