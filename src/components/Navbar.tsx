@@ -29,7 +29,10 @@ export default function Navbar() {
           >
             About
           </Link>
-          <Link href="#" className={styles.navLink}>
+          <Link
+            href="/services"
+            className={pathname === "/services" ? styles.navLinkActive : styles.navLink}
+          >
             Services
           </Link>
           <Link href="#" className={styles.navLink}>
