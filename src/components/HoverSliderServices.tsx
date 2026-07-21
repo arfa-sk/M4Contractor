@@ -1,9 +1,11 @@
 "use client"
 
 import * as React from "react"
+import Link from "next/link"
 import { HTMLMotionProps, MotionConfig, motion } from "motion/react"
 import { cn } from "@/lib/utils"
 import styles from "./HoverSliderServices.module.css"
+import { SERVICES_DATA as SHARED_SERVICES_DATA } from "./services/serviceData"
 
 interface TextStaggerHoverProps {
   text: string
@@ -207,48 +209,12 @@ export const HoverSliderImage = React.forwardRef<
 })
 HoverSliderImage.displayName = "HoverSliderImage"
 
-const SERVICES_DATA = [
-  {
-    title: "Cathodic Protection Systems",
-    imageUrl: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200",
-    description: "Design, installation, testing, commissioning, and maintenance of impressed current and sacrificial anode systems to protect pipelines, tanks, and buried metallic assets from corrosion."
-  },
-  {
-    title: "LV & MV Overhead Power Lines",
-    imageUrl: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1200",
-    description: "Construction of low- and medium-voltage overhead distribution networks, including poles, steel structures, conductor stringing, insulators, testing, and commissioning."
-  },
-  {
-    title: "Underground Power Lines",
-    imageUrl: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1200",
-    description: "Installation of underground power cable systems including trenching coordination, duct banks, cable laying, jointing, terminations, testing, and commissioning."
-  },
-  {
-    title: "Electrical & Instrumentation Works",
-    imageUrl: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1200",
-    description: "Complete electrical and instrumentation solutions including cable installation, cable trays, panels, field instruments, control systems, testing, and commissioning."
-  },
-  {
-    title: "Fiber Optic & OPGW Communications",
-    imageUrl: "https://images.unsplash.com/photo-1551703599-6b3dbb57c24e?q=80&w=1200",
-    description: "Supply, installation, splicing, OTDR testing, and commissioning of fiber optic and OPGW communication networks for industrial and utility applications."
-  },
-  {
-    title: "Well Pad Fencing",
-    imageUrl: "https://images.unsplash.com/photo-1508873535684-277a3cbcc4e8?q=80&w=1200",
-    description: "Supply and installation of HCIS-compliant perimeter fencing systems including gates, posts, mesh panels, and associated security infrastructure."
-  },
-  {
-    title: "Site Preparation Works",
-    imageUrl: "https://images.unsplash.com/photo-1579847253570-9d62fd27a972?q=80&w=1200",
-    description: "Site clearing, grading, leveling, earthworks, compaction, access roads, and groundwork preparation for industrial and infrastructure projects."
-  },
-  {
-    title: "Pipeline Maintenance",
-    imageUrl: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1200",
-    description: "Preventive and corrective maintenance, inspection support, coating repairs, corrosion mitigation, and integrity-related services for pipeline systems."
-  }
-]
+const SERVICES_DATA = SHARED_SERVICES_DATA.map((service) => ({
+  id: service.id,
+  title: service.title,
+  imageUrl: service.imageUrl,
+  description: service.description,
+}));
 
 function HoverSliderContent() {
   const { activeSlide, changeSlide } = useHoverSliderContext()
@@ -273,10 +239,12 @@ function HoverSliderContent() {
               const formattedNum = String(index + 1).padStart(2, "0")
               const isActive = activeSlide === index
               return (
-                <div
-                  key={index}
+                <Link
+                  key={service.id}
+                  href={`/services?service=${encodeURIComponent(service.id)}`}
                   className={cn(styles.serviceItem, isActive && styles.serviceItemActive)}
                   onMouseEnter={() => changeSlide(index)}
+                  style={{ textDecoration: "none" }}
                 >
                   <span className={styles.serviceItemNum}>
                     {formattedNum}
@@ -294,7 +262,7 @@ function HoverSliderContent() {
                   <span className={cn("material-symbols-outlined", styles.arrowIcon)}>
                     arrow_forward
                   </span>
-                </div>
+                </Link>
               )
             })}
           </div>
