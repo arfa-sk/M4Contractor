@@ -70,7 +70,7 @@ export default function HittSections() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setInView(true);
-          document.body.style.backgroundColor = "#000000"; // Pure Black
+          document.body.style.backgroundColor = "#1a1a1a"; // Deep Charcoal
           document.body.style.color = "#ffffff";
           document.body.style.transition = "background-color 0.8s ease, color 0.8s ease";
         } else {

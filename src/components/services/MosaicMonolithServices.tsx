@@ -205,14 +205,9 @@ export default function MosaicMonolithServices() {
         <div className={styles.cardGradientOverlay} />
       </div>
 
-      {/* Decorative Technical Brackets */}
-      <div className={styles.cornerLt} />
-      <div className={styles.cornerRb} />
-
       {/* Card Content */}
       <div className={styles.cardContent}>
         <div className={styles.cardTopBar}>
-          <span className={styles.badgeTag}>{service.tag}</span>
           <div className={styles.iconBox}>
             <span className="material-symbols-outlined">{service.icon}</span>
           </div>

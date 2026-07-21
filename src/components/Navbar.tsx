@@ -35,11 +35,11 @@ export default function Navbar() {
           >
             Services
           </Link>
-          <Link href="#" className={styles.navLink}>
+          <Link
+            href="/clients"
+            className={pathname === "/clients" ? styles.navLinkActive : styles.navLink}
+          >
             Clients
-          </Link>
-          <Link href="#" className={styles.navLink}>
-            Vision
           </Link>
           <Link href="#" className={styles.navLink}>
             Contact

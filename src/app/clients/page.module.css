@@ -1,0 +1,129 @@
+.mainWrapper {
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Background image filling the entire section */
+.heroBgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+
+/* White overlay that clips diagonally to reveal the image on the right */
+.darkDiagonalOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff; /* White color for the left side */
+  clip-path: polygon(0 0, 65% 0, 35% 100%, 0% 100%);
+  z-index: 1;
+}
+
+/* Content Container sitting on top of the overlay */
+.contentContainer {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Text block pinned to the left */
+.textContent {
+  max-width: 400px;
+  margin-top: -60px; /* Slight optical adjustment */
+}
+
+.heroTitle {
+  font-family: var(--font-montserrat, sans-serif);
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 24px;
+}
+
+.titleDark {
+  color: var(--deep-charcoal, #1a1a1a);
+}
+
+.titleOrange {
+  color: var(--vibrant-orange, #f14d2a);
+}
+
+.heroDesc {
+  font-family: var(--font-inter, sans-serif);
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4a5568;
+  margin-bottom: 40px;
+}
+
+.ctaButton {
+  background-color: var(--vibrant-orange, #f14d2a);
+  color: #ffffff;
+  border: none;
+  padding: 16px 36px;
+  font-family: var(--font-montserrat, sans-serif);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  background-color: #d13d1c;
+}
+
+
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .darkDiagonalOverlay {
+    /* Stack layout: more white coverage on top, less on bottom */
+    clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 80%);
+    background-color: rgba(255, 255, 255, 0.95); /* slight transparency */
+  }
+
+  .textContent {
+    max-width: 100%;
+    margin-top: 0;
+  }
+
+  .heroTitle {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroTitle {
+    font-size: 36px;
+  }
+}

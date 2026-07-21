@@ -241,7 +241,7 @@ function HoverSliderContent() {
               return (
                 <Link
                   key={service.id}
-                  href={`/services?service=${encodeURIComponent(service.id)}`}
+                  href={`/services#${service.id}`}
                   className={cn(styles.serviceItem, isActive && styles.serviceItemActive)}
                   onMouseEnter={() => changeSlide(index)}
                   style={{ textDecoration: "none" }}

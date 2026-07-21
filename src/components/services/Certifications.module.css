@@ -1,0 +1,165 @@
+.splitSection {
+  display: flex;
+  min-height: 800px;
+  background-color: var(--deep-charcoal, #1a1a1a);
+}
+
+@media (max-width: 900px) {
+  .splitSection {
+    flex-direction: column;
+  }
+}
+
+/* ── Left Pane (Image) ── */
+.leftPane {
+  flex: 1;
+  position: relative;
+  min-height: 400px;
+}
+
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(26, 26, 26, 0.2) 0%, rgba(26, 26, 26, 1) 100%);
+}
+
+@media (max-width: 900px) {
+  .imageOverlay {
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0.2) 0%, rgba(26, 26, 26, 1) 100%);
+  }
+}
+
+/* ── Right Pane (Content) ── */
+.rightPane {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 100px 80px;
+  background-color: var(--deep-charcoal);
+}
+
+.contentWrapper {
+  max-width: 600px;
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .rightPane {
+    padding: 80px 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .rightPane {
+    padding: 40px 24px 80px;
+  }
+}
+
+/* ── Header ── */
+.header {
+  margin-bottom: 64px;
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.orangeLine {
+  width: 40px;
+  height: 2px;
+  background-color: var(--vibrant-orange, #f14d2a);
+}
+
+.sectionLabel {
+  color: var(--vibrant-orange, #f14d2a);
+  letter-spacing: 2px;
+  font-family: var(--font-montserrat, sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: var(--font-montserrat, sans-serif);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 40px;
+  }
+}
+
+/* ── Clean Stacked List ── */
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.itemHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.bullet {
+  width: 8px;
+  height: 8px;
+  background-color: var(--vibrant-orange, #f14d2a);
+  border-radius: 50%;
+}
+
+.itemTitle {
+  font-family: var(--font-montserrat, sans-serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.itemDesc {
+  font-family: var(--font-inter, sans-serif);
+  font-size: 16px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  padding-left: 24px;
+}
+
+.itemCode {
+  display: inline-block;
+  font-family: var(--font-inter, sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--vibrant-orange, #f14d2a);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding-left: 24px;
+}

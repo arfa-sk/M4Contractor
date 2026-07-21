@@ -2,10 +2,11 @@
 
 import { Suspense } from "react";
 import { motion } from "motion/react";
+import Link from "next/link";
 import styles from "./page.module.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import MosaicMonolithServices from "@/components/services/MosaicMonolithServices";
+import StackedServices from "@/components/services/StackedServices";
 
 const staggerContainer = {
   hidden: { opacity: 1 },
@@ -36,23 +37,24 @@ export default function ServicesPage() {
             {/* Left Content */}
             <motion.div className={styles.heroLeft} variants={fadeInUp}>
               <div className={styles.heroLabelRow}>
-                <div className={styles.orangeLine}></div>
-                <span className={`label-bold ${styles.heroLabelText}`}>BUILDING THE FUTURE</span>
+                <span className={`label-bold ${styles.heroLabelText}`}>WHAT WE DO</span>
               </div>
 
               <h1 className={`display-lg ${styles.heroTitle}`}>
-                <span className={styles.heroTitleDark}>STRUCTURAL</span><br />
-                <span className={styles.heroTitleOrange}>PRECISION.</span>
+                <span className={styles.heroTitleDark}>EXCEPTIONAL</span><br />
+                <span className={styles.heroTitleOrange}>SERVICES.</span>
               </h1>
 
               <p className={`body-lg ${styles.heroDesc}`}>
-                Delivering high-end commercial and residential construction projects with meticulous attention to detail and unwavering commitment to quality.
+                From initial blueprints to the final touch, we provide comprehensive contracting solutions that deliver better results, maximum reliability, and superior quality across all sectors.
               </p>
 
               <div className={styles.heroBtns}>
-                <button className={`label-bold ${styles.btnPrimary}`}>
-                  REQUEST QUOTE <span className="material-symbols-outlined">arrow_forward</span>
-                </button>
+                <Link href="/about">
+                  <button className={`label-bold ${styles.btnPrimary}`}>
+                    ABOUT US <span className="material-symbols-outlined">arrow_forward</span>
+                  </button>
+                </Link>
               </div>
 
               {/* Trust Badges */}
@@ -89,9 +91,9 @@ export default function ServicesPage() {
           </div>
         </motion.section>
 
-        {/* Mosaic Monolith Edition Services Section */}
+        {/* Stacked Services Section */}
         <Suspense fallback={null}>
-          <MosaicMonolithServices />
+          <StackedServices />
         </Suspense>
 
       </main>
