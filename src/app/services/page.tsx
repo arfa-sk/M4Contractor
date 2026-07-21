@@ -1,9 +1,11 @@
 "use client";
 
+import { Suspense } from "react";
 import { motion } from "motion/react";
 import styles from "./page.module.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import MosaicMonolithServices from "@/components/services/MosaicMonolithServices";
 
 const staggerContainer = {
   hidden: { opacity: 1 },
@@ -87,7 +89,10 @@ export default function ServicesPage() {
           </div>
         </motion.section>
 
-        {/* You can add more specific services content here later */}
+        {/* Mosaic Monolith Edition Services Section */}
+        <Suspense fallback={null}>
+          <MosaicMonolithServices />
+        </Suspense>
 
       </main>
 
