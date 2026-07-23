@@ -120,6 +120,7 @@
 .listItem {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .itemHeader {

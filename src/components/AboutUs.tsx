@@ -5,6 +5,7 @@ import { motion, useScroll } from "motion/react";
 import styles from "./AboutUs.module.css";
 import HoverSliderServices from "./HoverSliderServices";
 import StatsMarquee from "./StatsMarquee";
+import MissionVision from "./MissionVision";
 
 const standards = [
   {
@@ -259,45 +260,7 @@ export default function AboutUs() {
       </ThemeSection>
 
       <div>
-        <section className={styles.visionMissionSection}>
-          <motion.div 
-            className={styles.visionMissionGrid}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-          >
-            {/* Vision Card - Dark */}
-            <ThemeSection theme="dark">
-              <motion.div className={styles.vmCard} variants={fadeInUp}>
-                <div className={styles.vmImageContainer}>
-                  <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" alt="Our Vision" className={styles.vmImage} />
-                </div>
-                <div className={styles.vmContentBox}>
-                  <div className={styles.vmBadge}>Our Vision</div>
-                  <p className={styles.vmText}>
-                    To be as the most innovative construction, supply companies and delivering excellence in every project we undertake in Saudi Arabia. M4 Contracting aims to lead the industry through professionalism, advanced technology, and sustainable practices. Our vision is to contribute to the Kingdom's growth by providing reliable services that set new benchmarks for quality, safety, and client satisfaction. We aspire to build long-term partnerships and a lasting legacy of integrity, reliability, and progress within the construction and industrial sectors of Saudi Arabia.
-                  </p>
-                </div>
-              </motion.div>
-            </ThemeSection>
-
-            {/* Mission Card - Reversed - Dark */}
-            <ThemeSection theme="dark">
-              <motion.div className={`${styles.vmCard} ${styles.reverse}`} variants={fadeInUp}>
-                <div className={styles.vmImageContainer}>
-                  <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=2070&auto=format&fit=crop" alt="Our Mission" className={styles.vmImage} />
-                </div>
-                <div className={styles.vmContentBox}>
-                  <div className={styles.vmBadge}>Our Mission</div>
-                  <p className={styles.vmText}>
-                    Our mission is to provide high-quality, cost-effective construction and supply solutions that exceed client expectations. We strive to ensure every project is delivered with safety, efficiency, and precision. By combining skilled manpower, modern equipment, and a commitment to continuous improvement, M4 Contracting aims to enhance customer value and strengthen its position in the Saudi market. We are dedicated to fostering teamwork, embracing innovation, and maintaining transparency in all our operations while contributing to the Kingdom's development through sustainable and responsible business practices.
-                  </p>
-                </div>
-              </motion.div>
-            </ThemeSection>
-          </motion.div>
-        </section>
+        <MissionVision />
 
         {/* Services Hover Slider Showcase */}
         <ThemeSection theme="dark">
