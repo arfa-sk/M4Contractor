@@ -454,98 +454,6 @@
   transform-style: preserve-3d;
 }
 
-/* ── Vision & Mission ── */
-.visionMissionSection {
-  padding: 100px var(--spacing-margin-desktop);
-  position: relative;
-  z-index: 2;
-  overflow: hidden;
-}
-
-.visionMissionGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 160px; /* Big gap to allow transition between sections */
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.vmCard {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: stretch;
-  gap: 0;
-  background: rgba(128, 128, 128, 0.05); /* Works on light and dark */
-  border: 1px solid rgba(128, 128, 128, 0.1);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  position: relative;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.1);
-}
-
-.vmCard.reverse {
-  direction: rtl;
-}
-
-.vmCard.reverse > * {
-  direction: ltr;
-}
-
-.vmImageContainer {
-  position: relative;
-  min-height: 400px;
-  overflow: hidden;
-}
-
-.vmImage {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s ease;
-}
-
-.vmCard:hover .vmImage {
-  transform: scale(1.05);
-}
-
-.vmContentBox {
-  padding: 80px 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-}
-
-.vmBadge {
-  display: inline-block;
-  background-color: var(--vibrant-orange);
-  color: #ffffff;
-  font-family: var(--font-montserrat);
-  font-weight: 800;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 10px 20px;
-  margin-bottom: 24px;
-  align-self: flex-start;
-  border-radius: 2px;
-  box-shadow: 0 4px 15px rgba(241, 77, 42, 0.3);
-}
-
-.vmText {
-  color: var(--body-text);
-  opacity: 0.85;
-  font-family: var(--font-inter);
-  line-height: 1.8;
-  font-size: 16px;
-  transition: color 0.8s ease;
-}
-
 /* ── Timeline ── */
 .timelineSection {
   padding: var(--spacing-section-gap) var(--spacing-margin-desktop);
@@ -711,7 +619,6 @@
   .aramcoSection,
   .standardSection,
   .timelineSection,
-  .visionMissionSection,
   .ctaSection {
     padding-left: var(--spacing-margin-mobile);
     padding-right: var(--spacing-margin-mobile);
@@ -727,19 +634,4 @@
     width: 100%;
   }
 
-  .vmCard {
-    grid-template-columns: 1fr;
-  }
-
-  .vmCard.reverse {
-    direction: ltr;
-  }
-
-  .vmImageContainer {
-    min-height: 250px;
-  }
-
-  .vmContentBox {
-    padding: 40px 24px;
-  }
 }

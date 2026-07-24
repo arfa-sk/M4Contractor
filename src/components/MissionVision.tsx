@@ -33,7 +33,7 @@ export default function MissionVision() {
         >
           <div 
             className={styles.clippedImage}
-            style={{ backgroundImage: "url('/custruction.png')" }} // High quality placeholder
+            style={{ backgroundImage: "url('/custruction.png')" }}
           />
         </motion.div>
 

@@ -4,8 +4,8 @@ import { motion } from "motion/react";
 import styles from "./page.module.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import MissionVision from "@/components/clients/MissionVision";
 import Certifications from "@/components/services/Certifications";
+import ClientsPartnersIndustries from "@/components/clients/ClientsPartnersIndustries";
 
 export default function ClientsPage() {
   return (
@@ -58,8 +58,7 @@ export default function ClientsPage() {
           </div>
         </section>
 
-        {/* New Mission & Vision Section */}
-        <MissionVision />
+        <ClientsPartnersIndustries />
 
         {/* Certifications Section Moved Here */}
         <Certifications />
