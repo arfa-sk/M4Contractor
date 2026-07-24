@@ -51,7 +51,12 @@ export default function Certifications() {
           >
 
             {/* Item 1 */}
-            <motion.div className={styles.listItem} variants={itemVariants}>
+            <motion.div
+              className={styles.listItem}
+              variants={itemVariants}
+              whileHover={{ scale: 1.02, y: -4 }}
+              transition={{ type: "spring", stiffness: 300, damping: 24 }}
+            >
               <div className={styles.itemHeader}>
                 <span className={styles.bullet}></span>
                 <h3 className={styles.itemTitle}>Saudi Aramco Approved</h3>
@@ -63,7 +68,12 @@ export default function Certifications() {
             </motion.div>
 
             {/* Item 2 */}
-            <motion.div className={styles.listItem} variants={itemVariants}>
+            <motion.div
+              className={styles.listItem}
+              variants={itemVariants}
+              whileHover={{ scale: 1.02, y: -4 }}
+              transition={{ type: "spring", stiffness: 300, damping: 24 }}
+            >
               <div className={styles.itemHeader}>
                 <span className={styles.bullet}></span>
                 <h3 className={styles.itemTitle}>Ministry of Interior</h3>
@@ -75,7 +85,12 @@ export default function Certifications() {
             </motion.div>
 
             {/* Item 3 */}
-            <motion.div className={styles.listItem} variants={itemVariants}>
+            <motion.div
+              className={styles.listItem}
+              variants={itemVariants}
+              whileHover={{ scale: 1.02, y: -4 }}
+              transition={{ type: "spring", stiffness: 300, damping: 24 }}
+            >
               <div className={styles.itemHeader}>
                 <span className={styles.bullet}></span>
                 <h3 className={styles.itemTitle}>HCIS Compliant</h3>
@@ -86,7 +101,12 @@ export default function Certifications() {
             </motion.div>
 
             {/* Item 4 */}
-            <motion.div className={styles.listItem} variants={itemVariants}>
+            <motion.div
+              className={styles.listItem}
+              variants={itemVariants}
+              whileHover={{ scale: 1.02, y: -4 }}
+              transition={{ type: "spring", stiffness: 300, damping: 24 }}
+            >
               <div className={styles.itemHeader}>
                 <span className={styles.bullet}></span>
                 <h3 className={styles.itemTitle}>Saudi Vision 2030</h3>

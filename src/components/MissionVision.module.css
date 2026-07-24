@@ -1,6 +1,6 @@
 .sectionWrapper {
   width: 100%;
-  background-color: var(--deep-charcoal, #1a1a1a); /* Dark background matching M4 theme */
+  background-color: var(--deep-charcoal, #1a1a1a);
   padding: 80px 24px;
 }
 
@@ -11,7 +11,6 @@
   height: 850px;
 }
 
-/* Typography */
 .title {
   font-family: var(--font-montserrat, sans-serif);
   font-size: 40px;
@@ -28,7 +27,6 @@
   color: #e2e8f0;
 }
 
-/* Blocks Positioning on Desktop */
 .missionBlock {
   position: absolute;
   top: 80px;
@@ -47,7 +45,6 @@
   z-index: 2;
 }
 
-/* Center Image with Diagonal Clip Path */
 .imageCenter {
   position: absolute;
   top: 0;
@@ -66,12 +63,10 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* Thinner slanted strip in the middle */
   clip-path: polygon(0 40%, 100% 10%, 100% 60%, 0 90%);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
-/* Mobile Responsive Layout */
 @media (max-width: 900px) {
   .container {
     position: static;
