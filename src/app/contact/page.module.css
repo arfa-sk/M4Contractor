@@ -1,0 +1,5 @@
+.main {
+  background-color: var(--background, #f9f9f9);
+  min-height: 100vh;
+  padding-top: 80px; /* Offset for navbar */
+}

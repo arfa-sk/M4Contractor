@@ -41,16 +41,21 @@ export default function Navbar() {
           >
             Clients
           </Link>
-          <Link href="#" className={styles.navLink}>
+          <Link
+            href="/contact"
+            className={pathname === "/contact" ? styles.navLinkActive : styles.navLink}
+          >
             Contact
           </Link>
         </div>
 
         {/* Actions Section */}
         <div className={styles.actions}>
-          <button className={styles.ctaBtn}>
-            REQUEST QUOTE
-          </button>
+          <Link href="/contact">
+            <button className={styles.ctaBtn}>
+              REQUEST QUOTE
+            </button>
+          </Link>
         </div>
       </nav>
     </div>
